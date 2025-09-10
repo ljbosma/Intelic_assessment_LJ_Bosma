@@ -4,6 +4,12 @@ import time
 import heapq
 import random
 
+"""
+In Grid I read out the txt file as an np array. I do this for faster calculations.
+Recharge function increases the cells' collected values over time.
+Collect function deals with a cell when it gets visited by the drone
+"""
+
 
 class Grid:
     def __init__(self, path: str, increment: float = 0.07, clip_max: float = 5.0):
@@ -42,6 +48,12 @@ class Grid:
         return value
 
 
+"""
+In Drone I initialise a drone. It's starting position is either specified or is randomly chosen on an edge of the grid.
+In each Drone object, the score is tracked independently.
+"""
+
+
 class Drone:
     def __init__(self, start: Tuple[int, int]):
         self.position = start
@@ -54,6 +66,14 @@ class Drone:
 
     def add_score(self, value: int):
         self.score += value
+
+
+"""
+In Planner, I plan the path for a drone to take.
+I start off by looking for the single best hotspot based on cell value, average neighbour value, chebyshev distance, and whether it has been visited.
+I then use a greedy baseline function that greedily navigates towards a hotspot so that the chebyhev distance is always reduced. 
+Next, a custom made A* algorithm is used to find new paths with higher average rewards per time step to the goal.
+"""
 
 
 class Planner:
@@ -160,7 +180,7 @@ class Planner:
 
         d_min = self.chebyshev(start, goal)
         max_extra = 0
-        max_allowed_extra = max(1, int(d_min * 0.1))  # cap at 10% of distance
+        max_allowed_extra = max(1, int(d_min * 0.5))  # cap at 50% of distance
 
         while (time.perf_counter() - start_time) * 1000 < time_limit_ms:
             step_budget = d_min + max_extra
