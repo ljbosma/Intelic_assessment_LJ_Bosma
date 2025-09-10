@@ -1,4 +1,4 @@
-# Assessment 1 – Drone Path Planning
+# Assessment Intelic – Drone Path Planning
 
 ## Task Description  
 
@@ -28,7 +28,7 @@ Avalor AI is developing an advanced drone swarm system for autonomous area monit
 Two different approaches to the assignment are included in this repository. Both use the same core components (`Grid`, `Drone`, `Simulation`) but differ in how the **Planner** selects and evaluates paths.  
 
 ### **Code 1 – Hotspot Selection + Bounded A\***  
-- **Hotspot-based planning:** Finds a promising hotspot (cell with high value + high-value neighbors) near the drone.  
+- **Hotspot-based planning:** Finds a promising hotspot (cell with high value + high-value neighbors and applying extra weight for nearby and non-visited hotspots) near the drone.  
 - **Bounded A\***: Runs a time-limited A\*-like search toward that hotspot.  
   - Uses Chebyshev distance for movement costs.  
   - Keeps track of score-per-step to balance distance vs. reward.  
@@ -76,8 +76,6 @@ Two different approaches to the assignment are included in this repository. Both
 
 ## Running the Simulation  
 
-1. Place your grid file under `grids/` (e.g., `grids/100.txt`).  
-2. Run either script directly:  
-   ```bash
-   python code1.py
-   python code2.py
+1. ```bash
+   pip install -r requirements.txt
+2. Tune the parameters in the main function accordingly and run codes.
