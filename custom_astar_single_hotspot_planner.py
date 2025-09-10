@@ -257,7 +257,7 @@ class Planner:
             reward = self.grid.collect(next_pos)
             self.drone.add_score(reward)
         else:
-            # 🔑 fallback move: always step to the best neighbor
+            # fallback move: always step to the best neighbor
             x, y = self.drone.position
             neighbors = [
                 (x + dx, y + dy)

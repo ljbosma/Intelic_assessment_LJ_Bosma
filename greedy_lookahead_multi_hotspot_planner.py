@@ -166,7 +166,7 @@ class Planner:
                         if self.chebyshev(new_pos, goal) >= current_dist:
                             continue
 
-                        # 🔑 evaluate short greedy rollout for tie-breaking
+                        # evaluate short greedy rollout for tie-breaking
                         score = self.simulate_rollout(
                             new_pos, goal, self.lookahead_depth
                         )
