@@ -160,7 +160,7 @@ class Planner:
 
         d_min = self.chebyshev(start, goal)
         max_extra = 0
-        max_allowed_extra = max(1, int(d_min * 0.1))  # 🔑 cap at 10% of distance
+        max_allowed_extra = max(1, int(d_min * 0.1))  # cap at 10% of distance
 
         while (time.perf_counter() - start_time) * 1000 < time_limit_ms:
             step_budget = d_min + max_extra
