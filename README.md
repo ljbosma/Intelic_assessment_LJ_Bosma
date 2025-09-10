@@ -25,7 +25,7 @@ Avalor AI is developing an advanced drone swarm system for autonomous area monit
 
 ## Implemented Solutions  
 
-Two different approaches to the assignment are included in this repository. Both use the same core components (`Grid`, `Drone`, `Simulation`) but differ in how the **Planner** selects and evaluates paths.  
+Two different approaches to the assignment are included in this repository. Both use the same core components (`Grid`, `Drone`, `Simulation`) but differ in how the **Planner** selects and evaluates paths. Multiple objects for drones can be made, but the path planners do not account for swarming.
 
 ### **Code 1 – Hotspot Selection + Bounded A\***  
 custom_astar_single_hotspot_planner.py
