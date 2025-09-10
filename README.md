@@ -28,6 +28,7 @@ Avalor AI is developing an advanced drone swarm system for autonomous area monit
 Two different approaches to the assignment are included in this repository. Both use the same core components (`Grid`, `Drone`, `Simulation`) but differ in how the **Planner** selects and evaluates paths.  
 
 ### **Code 1 – Hotspot Selection + Bounded A\***  
+custom_astar_single_hotspot_planner.py
 - **Hotspot-based planning:** Finds a promising hotspot (cell with high value + high-value neighbors and applying extra weight for nearby and non-visited hotspots) near the drone.  
 - **Bounded A\***: Runs a time-limited A\*-like search toward that hotspot.  
   - Uses Chebyshev distance for movement costs.  
@@ -45,7 +46,8 @@ Two different approaches to the assignment are included in this repository. Both
 
 ---
 
-### **Code 2 – Hotspot Ranking + Greedy Lookahead**  
+### **Code 2 – Hotspot Ranking + Greedy Lookahead**
+greedy_lookahead_multi_hotspot_planner.py
 - **All hotspot ranking:** Scans the drone’s local neighborhood to rank *all* candidate hotspots using value, neighbor average, distance, and exploration bonus.  
 - **Greedy lookahead pathing:** For each hotspot, builds a greedy path that always reduces Chebyshev distance, with a small rollout (`lookahead_depth`) for tie-breaking.  
 - **Evaluation:** Selects the hotspot path with the highest average reward per step.  
