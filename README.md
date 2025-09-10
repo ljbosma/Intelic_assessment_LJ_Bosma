@@ -76,6 +76,7 @@ Two different approaches to the assignment are included in this repository. Both
 
 ## Running the Simulation  
 
-1. ```bash
+1. Run the following line in the terminal:
+```bash
    pip install -r requirements.txt
 2. Tune the parameters in the main function accordingly and run codes.
