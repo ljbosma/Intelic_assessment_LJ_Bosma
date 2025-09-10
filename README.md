@@ -80,5 +80,7 @@ Two different approaches to the assignment are included in this repository. Both
    ```
    pip install -r requirements.txt
    ```
-   
-2. Tune the parameters in the main function accordingly and run codes.
+
+2. Tune the parameters in the main function accordingly and run codes custom_astar_single_hotspot_planner.py and greedy_lookahead_multi_hotspot_planner.py.
+
+3. Ignore greedy_multi_hotspot_planner.py and greedy_single_hotspot_planner.py
