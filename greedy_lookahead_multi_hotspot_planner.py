@@ -352,11 +352,11 @@ if __name__ == "__main__":
     sim = Simulation(
         grid_path=path_to_grid,
         num_drones=1,
-        T=10,  # ms per planning step
-        t=200,  # total timesteps (moves)
+        T=10,  # ms budget per planning step
+        t=200,  # total timesteps (moves) (set to 0 for t = N*N//2)
         start_positions=[
             (0, 0),
-        ],  # None for random edge start or [(x1,y1), (x2,y2)]
+        ],  # set to None if we want to randomly set position on an edge. Set to [(x1, y1), (x2, y2)] if you want to specify its starting position
         alpha=0.5,  # weight factor for nearby hotspots
         beta=0.5,  # weight factor for non-visited hotspots
         increment=0.07,  # percentage of original value increment
